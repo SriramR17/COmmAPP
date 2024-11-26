@@ -48,10 +48,18 @@
                 <button type="submit">Send Summary</button>
             </div>
         </form>
+
+        <!-- Display email status -->
+        {% if email_status %}
+            <div class="email-status">
+                {% if email_status == 'success' %}
+                  
+                    <img src="static\images\favicon-16x16.png" alt="Email Sent">Email sent successfully!</img>
+                {% else %}
+                    <p>Email sending failed: {{ email_status }}</p>
+                {% endif %}
+            </div>
+        {% endif %}
     </div>
-    <script src="static/js/scr.js"></script>
-    <style>
-        
-    </style>
 </body>
 </html>

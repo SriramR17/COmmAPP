@@ -98,8 +98,16 @@ def send_summary():
         reference_image_paths.append(image_path)
 
     # Send email with the data, images, and links
-    send_email_with_details(manager_email, data, reference_image_paths, additional_links)
-    return redirect(url_for('summary'))  # Redirect back to the summary page after sending the email
+    try:
+        send_email_with_details(manager_email, data, reference_image_paths, additional_links)
+        email_status = "success"
+    except Exception as e:
+        email_status = f"failure: {str(e)}"
+
+    # Pass data and status to the template
+    return render_template('summary.html', data=data, email_status=email_status)  # Render the template with data and status
+
+
 
 def send_email_with_details(manager_email, data, reference_image_paths, additional_links):
     msg = Message('Product Requirements Summary', recipients=[manager_email])
