@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Select the Domain</h1>
+<form method="POST" action="/domain">
+    <label class="custom-radio">
+        <input type="radio" name="domain" value="Online Streaming" 
+               {% if selected_domain == 'Online Streaming' %}checked{% endif %}>
+        <span class="radio-label">Online Streaming</span>
+    </label>
+    <label class="custom-radio">
+        <input type="radio" name="domain" value="Radio" 
+               {% if selected_domain == 'Radio' %}checked{% endif %}>
+        <span class="radio-label">Radio</span>
+    </label>
+    <label class="custom-radio">
+        <input type="radio" name="domain" value="TV" 
+               {% if selected_domain == 'TV' %}checked{% endif %}>
+        <span class="radio-label">TV</span>
+    </label>
+
+    <div class="buttons">
+        <button type="submit" class="next-btn" disabled>Next</button>
+    </div>
+    
+</form>
+
+{% endblock %}

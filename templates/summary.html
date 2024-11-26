@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary</title>
+    <link rel="stylesheet" href="/static/css/styless.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Summary of Requirements</h1>
+        <ul>
+            <li><strong>Domain:</strong> {{ data.domain }}</li>
+            <li><strong>Categories:</strong> {{ data.categories | join(', ') }}</li>
+            <li><strong>Platform:</strong> {{ data.platform }}</li>
+            <li><strong>Functional Requirements:</strong> {{ data.functional_requirements | join(', ') }}</li>
+            <li><strong>Non-Functional Requirements:</strong> {{ data.non_functional_requirements | join(', ') }}</li>
+        </ul>
+        <div class="buttons">
+            <button onclick="window.location.href='/domain'">Edit</button>
+        </div>
+
+        <!-- New Section for Sending Summary -->
+        <form method="POST" action="/send_summary" enctype="multipart/form-data">
+            <h3>Send Summary to Manager</h3>
+            <label for="manager_email">Manager Email:</label>
+            <input type="email" id="manager_email" name="manager_email" required>
+            
+            <label for="reference_images">Upload Reference Images:</label>
+            <input type="file" id="reference_images" name="reference_images" accept="image/*" multiple>
+            
+            <label for="additional_links">Additional Links (Comma Separated):</label>
+            <textarea id="additional_links" name="additional_links" rows="3" placeholder="Add links..."></textarea>
+
+            <button type="submit">Send Summary</button>
+        </form>
+    </div>
+</body>
+</html>
