@@ -1,26 +1,36 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>Select Platforms</h1>
-<form method="POST" action="/platform">
+<h1>Select Platform</h1>
+<form method="POST" action="/platform" id="platformForm">
     <label class="custom-radio">
-        <input type="radio" name="platform" value="Web" {% if selected_platform == 'Web' %}checked{% endif %}>
+        <input type="radio" name="platform" value="Web" 
+               {% if selected_platform == 'Web' %}checked{% endif %}>
         <span class="radio-label">Web</span>
     </label>
     <label class="custom-radio">
-        <input type="radio" name="platform" value="Mobile" {% if selected_platform == 'Mobile' %}checked{% endif %}>
+        <input type="radio" name="platform" value="Mobile" 
+               {% if selected_platform == 'Mobile' %}checked{% endif %}>
         <span class="radio-label">Mobile</span>
     </label>
     <label class="custom-radio">
-        <input type="radio" name="platform" value="Desktop" {% if selected_platform == 'Desktop' %}checked{% endif %}>
+        <input type="radio" name="platform" value="Desktop" 
+               {% if selected_platform == 'Desktop' %}checked{% endif %}>
         <span class="radio-label">Desktop</span>
     </label>
     <label class="custom-radio">
-        <input type="radio" name="platform" value="Tablet" {% if selected_platform == 'Tablet' %}checked{% endif %}>
+        <input type="radio" name="platform" value="Tablet" 
+               {% if selected_platform == 'Tablet' %}checked{% endif %}>
         <span class="radio-label">Tablet</span>
     </label>
+
     <div class="buttons">
-        <button type="submit" class="next-btn" disabled>Next</button>
+        <button type="submit" class="next-btn" id="nextButton" disabled>Next</button>
+        
     </div>
 </form>
-
+<script src="static/js/scr.js"></script>
 {% endblock %}
+
+
+
+

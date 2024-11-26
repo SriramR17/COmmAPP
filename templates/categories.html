@@ -1,29 +1,34 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Select Categories</h1>
-<form method="POST" action="/categories">
+<form method="POST" action="/categories" id="categoriesForm">
     <label class="custom-checkbox">
-        <input type="checkbox" name="categories" value="News" {% if 'News' in selected_categories %}checked{% endif %}>
+        <input type="checkbox" name="categories" value="News" 
+               {% if 'News' in selected_categories %}checked{% endif %}>
         <span class="checkbox-label">News</span>
     </label>
     <label class="custom-checkbox">
-        <input type="checkbox" name="categories" value="Sports" {% if 'Sports' in selected_categories %}checked{% endif %}>
+        <input type="checkbox" name="categories" value="Sports" 
+               {% if 'Sports' in selected_categories %}checked{% endif %}>
         <span class="checkbox-label">Sports</span>
     </label>
     <label class="custom-checkbox">
-        <input type="checkbox" name="categories" value="Entertainment" {% if 'Entertainment' in selected_categories %}checked{% endif %}>
+        <input type="checkbox" name="categories" value="Entertainment" 
+               {% if 'Entertainment' in selected_categories %}checked{% endif %}>
         <span class="checkbox-label">Entertainment</span>
     </label>
     <label class="custom-checkbox">
-        <input type="checkbox" name="categories" value="Education" {% if 'Education' in selected_categories %}checked{% endif %}>
+        <input type="checkbox" name="categories" value="Education" 
+               {% if 'Education' in selected_categories %}checked{% endif %}>
         <span class="checkbox-label">Education</span>
     </label>
+
     <div class="buttons">
-        <button type="submit" class="next-btn" disabled>Next</button>
+        <button type="submit" class="next-btn" id="nextButton" disabled>Next</button>
     </div>
-
-   
-   
 </form>
-
+<script src="static/js/scr.js"></script>
 {% endblock %}
+
+
+

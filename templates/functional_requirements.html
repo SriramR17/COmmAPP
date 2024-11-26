@@ -1,26 +1,34 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Select Functional Requirements</h1>
-<form method="POST" action="/functional-requirements">
+<form method="POST" action="/functional-requirements" id="functionalForm">
     <label class="custom-checkbox">
-        <input type="checkbox" name="functional_requirements" value="User Authentication" {% if 'User Authentication' in selected_functional_requirements %}checked{% endif %}>
+        <input type="checkbox" name="functional_requirements" value="User Authentication" 
+               {% if 'User Authentication' in selected_functional_requirements %}checked{% endif %}>
         <span class="checkbox-label">User Authentication</span>
     </label>
     <label class="custom-checkbox">
-        <input type="checkbox" name="functional_requirements" value="Search Functionality" {% if 'Search Functionality' in selected_functional_requirements %}checked{% endif %}>
+        <input type="checkbox" name="functional_requirements" value="Search Functionality" 
+               {% if 'Search Functionality' in selected_functional_requirements %}checked{% endif %}>
         <span class="checkbox-label">Search Functionality</span>
     </label>
     <label class="custom-checkbox">
-        <input type="checkbox" name="functional_requirements" value="Payment Integration" {% if 'Payment Integration' in selected_functional_requirements %}checked{% endif %}>
+        <input type="checkbox" name="functional_requirements" value="Payment Integration" 
+               {% if 'Payment Integration' in selected_functional_requirements %}checked{% endif %}>
         <span class="checkbox-label">Payment Integration</span>
     </label>
     <label class="custom-checkbox">
-        <input type="checkbox" name="functional_requirements" value="Real-Time Notifications" {% if 'Real-Time Notifications' in selected_functional_requirements %}checked{% endif %}>
+        <input type="checkbox" name="functional_requirements" value="Real-Time Notifications" 
+               {% if 'Real-Time Notifications' in selected_functional_requirements %}checked{% endif %}>
         <span class="checkbox-label">Real-Time Notifications</span>
     </label>
+
     <div class="buttons">
-        <button type="submit" class="next-btn" disabled>Next</button>
+        <button type="submit" class="next-btn" id="nextButton" disabled>Next</button>
     </div>
 </form>
-
+<script src="static/js/scr.js"></script>
 {% endblock %}
+
+
+

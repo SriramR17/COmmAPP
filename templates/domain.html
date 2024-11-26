@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Select the Domain</h1>
-<form method="POST" action="/domain">
+<form method="POST" action="/domain" id="domainForm">
     <label class="custom-radio">
         <input type="radio" name="domain" value="Online Streaming" 
                {% if selected_domain == 'Online Streaming' %}checked{% endif %}>
@@ -19,9 +19,10 @@
     </label>
 
     <div class="buttons">
-        <button type="submit" class="next-btn" disabled>Next</button>
+        <button type="submit" class="next-btn" id="nextButton" >Next</button>
     </div>
-    
 </form>
-
+<script src="static/js/scr.js"></script>
 {% endblock %}
+
+

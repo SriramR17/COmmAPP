@@ -1,26 +1,34 @@
 {% extends 'base.html' %}
 {% block content %}
 <h1>Select Non-Functional Requirements</h1>
-<form method="POST" action="/non-functional-requirements">
+<form method="POST" action="/non-functional-requirements" id="nonFunctionalForm">
     <label class="custom-checkbox">
-        <input type="checkbox" name="non_functional_requirements" value="Performance" {% if 'Performance' in selected_non_functional_requirements %}checked{% endif %}>
+        <input type="checkbox" name="non_functional_requirements" value="Performance" 
+               {% if 'Performance' in selected_non_functional_requirements %}checked{% endif %}>
         <span class="checkbox-label">Performance</span>
     </label>
     <label class="custom-checkbox">
-        <input type="checkbox" name="non_functional_requirements" value="Scalability" {% if 'Scalability' in selected_non_functional_requirements %}checked{% endif %}>
+        <input type="checkbox" name="non_functional_requirements" value="Scalability" 
+               {% if 'Scalability' in selected_non_functional_requirements %}checked{% endif %}>
         <span class="checkbox-label">Scalability</span>
     </label>
     <label class="custom-checkbox">
-        <input type="checkbox" name="non_functional_requirements" value="Security" {% if 'Security' in selected_non_functional_requirements %}checked{% endif %}>
+        <input type="checkbox" name="non_functional_requirements" value="Security" 
+               {% if 'Security' in selected_non_functional_requirements %}checked{% endif %}>
         <span class="checkbox-label">Security</span>
     </label>
     <label class="custom-checkbox">
-        <input type="checkbox" name="non_functional_requirements" value="Maintainability" {% if 'Maintainability' in selected_non_functional_requirements %}checked{% endif %}>
+        <input type="checkbox" name="non_functional_requirements" value="Maintainability" 
+               {% if 'Maintainability' in selected_non_functional_requirements %}checked{% endif %}>
         <span class="checkbox-label">Maintainability</span>
     </label>
+
     <div class="buttons">
-        <button type="submit" class="next-btn" disabled>Next</button>
+        <button type="submit" class="next-btn" id="nextButton" disabled>Next</button>
     </div>
 </form>
-
+<script src="static/js/scr.js"></script>
 {% endblock %}
+
+
+
