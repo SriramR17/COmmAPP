@@ -1,16 +1,18 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 from flask_mail import Mail, Message
 import os
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'
 
+load_dotenv()
 # Flask-Mail Configuration
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'sriramr958@gmail.com'  # Replace with your email
-app.config['MAIL_PASSWORD'] = 'dgwi uoxk icbz gppb'  # Replace with your app password
+app.config['MAIL_USERNAME'] = os.getenv("EMAIL_USERNAME") # Replace with your email
+app.config['MAIL_PASSWORD'] = os.getenv("EMAIL_PASSWORD")  # Replace with your app password
 app.config['MAIL_DEFAULT_SENDER'] = 'beno@gmail.com'
 mail = Mail(app)
 
